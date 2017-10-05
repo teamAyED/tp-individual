@@ -25,6 +25,7 @@ void ingresoDatosPorPantalla(){
 
     cout << endl << "Lista: " << endl;
     mostrarProductos(productos);
+    vaciar(productos);
 }
 
 

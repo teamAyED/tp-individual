@@ -4,7 +4,9 @@
 
 #include "Lista.h"
 
-void agregar(NodoProducto* & lista, Producto producto){
+Producto eliminarPrimerProducto(NodoProducto* & lista);
+
+void agregarProducto(NodoProducto* & lista, Producto producto){
     NodoProducto* nuevo = new NodoProducto();
     nuevo->info = producto;
     nuevo->siguiente = NULL;
@@ -15,8 +17,21 @@ void agregar(NodoProducto* & lista, Producto producto){
     }
 }
 
-void eliminar(NodoProducto* & lista){
+void vaciar(NodoProducto* & lista){
+    while( lista != NULL ){
+        eliminarPrimerProducto(lista);
+    }
+}
 
+Producto eliminarPrimerProducto(NodoProducto* & lista){
+    if( lista != NULL ){
+        NodoProducto* primero = lista;
+        lista = primero->siguiente;
+        Producto primerValor = primero->info;
+        delete(primero);
+        return  primerValor;
+    }
+    return NULL;
 }
 
 void agregarOrdenado(NodoProducto* & lista, Producto producto){

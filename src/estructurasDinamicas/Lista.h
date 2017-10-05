@@ -8,12 +8,22 @@
 #include "../struct/NodoProducto.h"
 #include "../struct/Producto.h"
 
-void agregar(NodoProducto* & lista, Producto producto);
+#define LISTA_PRIMERO 0
+#define LISTA_ULTIMO 1
 
-void eliminar(NodoProducto* & lista);
+void agregarProducto(NodoProducto* & lista, Producto producto);
+
+void vaciar(NodoProducto* & lista);
 
 void agregarOrdenado(NodoProducto* & lista, Producto producto);
 
 void agregarAlPrincipio(NodoProducto* & lista, Producto producto);
+
+NodoProducto* obtenerPrimero(NodoProducto* & lista);
+
+void obtenerProducto(NodoProducto* & lista, int posicion);
+
+Producto obtenerPrimerProducto(NodoProducto* & lista);
+
 
 #endif //SIMPLE_EXAMPLE_LISTA_H
