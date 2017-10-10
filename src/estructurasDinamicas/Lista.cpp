@@ -6,7 +6,7 @@
 
 Producto eliminarPrimerProducto(NodoProducto* & lista);
 
-void agregarProducto(NodoProducto* & lista, Producto producto){
+void agregarProducto(NodoProducto* lista, Producto producto){
     NodoProducto* nuevo = new NodoProducto();
     nuevo->info = producto;
     nuevo->siguiente = NULL;
@@ -31,7 +31,13 @@ Producto eliminarPrimerProducto(NodoProducto* & lista){
         delete(primero);
         return  primerValor;
     }
-    return NULL;
+}
+
+void agregarAlPrincipio(NodoProducto* & lista, Producto producto){
+    NodoProducto* primero = new NodoProducto();
+    primero->info = producto;
+    primero->siguiente = (lista != NULL) ? lista : NULL;
+    lista = primero;
 }
 
 void agregarOrdenado(NodoProducto* & lista, Producto producto){
@@ -43,20 +49,13 @@ void agregarOrdenado(NodoProducto* & lista, Producto producto){
         nuevo->info = producto;
         nuevo->siguiente = NULL;
         NodoProducto* aux = lista;
-        NodoProducto* ant = lista;
+        NodoProducto* anterior = lista;
 
         while( aux != NULL && aux->info.stock < producto.stock ){
-            ant = aux;
+            anterior = aux;
             aux = aux->siguiente;
         }
-        ant->siguiente = nuevo;
+        anterior->siguiente = nuevo;
         nuevo->siguiente = aux;
     }
-}
-
-void agregarAlPrincipio(NodoProducto* & lista, Producto producto){
-    NodoProducto* nuevo = new NodoProducto();
-    nuevo->info = producto;
-    nuevo->siguiente = lista;
-    lista = nuevo;
 }

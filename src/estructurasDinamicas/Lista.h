@@ -11,7 +11,6 @@
 #define LISTA_PRIMERO 0
 #define LISTA_ULTIMO 1
 
-void agregarProducto(NodoProducto* & lista, Producto producto);
 
 void vaciar(NodoProducto* & lista);
 
@@ -19,11 +18,6 @@ void agregarOrdenado(NodoProducto* & lista, Producto producto);
 
 void agregarAlPrincipio(NodoProducto* & lista, Producto producto);
 
-NodoProducto* obtenerPrimero(NodoProducto* & lista);
-
-void obtenerProducto(NodoProducto* & lista, int posicion);
-
-Producto obtenerPrimerProducto(NodoProducto* & lista);
 
 
 #endif //SIMPLE_EXAMPLE_LISTA_H

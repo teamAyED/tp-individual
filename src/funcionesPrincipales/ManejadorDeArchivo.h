@@ -5,10 +5,16 @@
 #ifndef SIMPLE_EXAMPLE_MANEJADORDEARCHIVO_H
 #define SIMPLE_EXAMPLE_MANEJADORDEARCHIVO_H
 
-#import <iostream>
-#import <string>
+#include <iostream>
+#include <string>
 #include <cstdio>
 #include "../struct/Producto.h"
 #include "../struct/NodoProducto.h"
+#include "../vista/CargaDeDatos.h"
+
+
+bool guardarProductosEnArchivo(std::string nombreArchivo, NodoProducto* productos);
+
+void leerProductosDeArchivo(std::string nombreArchivo, NodoProducto* productos);
 
 #endif //SIMPLE_EXAMPLE_MANEJADORDEARCHIVO_H

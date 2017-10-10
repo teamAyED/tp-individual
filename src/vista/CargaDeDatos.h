@@ -12,8 +12,13 @@
 
 #define FIN_CARGA_DE_PRODUCTOS -1;
 
-void cargarProductos(NodoProducto* & productos);
+bool cargarProductoDesdePantalla(Producto & productoACargar);
 
-void mostrarProductos(NodoProducto *productos);
+void cargarProductosDesdePantalla(NodoProducto* & productos);
+
+void imprimirProducto(Producto producto);
+
+void imprimirProductos(NodoProducto *productos);
+
 
 #endif //SIMPLE_EXAMPLE_CARGADEDATOS_H

@@ -6,26 +6,11 @@
 
 using namespace std;
 
-bool cargarProductosDesdePantalla(Producto & productoACargar);
-
-void cargarProductos(NodoProducto* & productos){
-    bool seguirCargando;
-    Producto productoACargar;
-
-    cout << "*** Para terminar la carga: idProducto = -1" << endl;
-    cout << "Ingrese datos de los productos: " << endl;
-    seguirCargando = cargarProductosDesdePantalla( productoACargar );
-    while( seguirCargando ) {
-        agregarOrdenado(productos, productoACargar);
-        seguirCargando = cargarProductosDesdePantalla( productoACargar );
-    }
-}
-
 bool finCargaDeProductos(int datoIngresado) {
     return datoIngresado == FIN_CARGA_DE_PRODUCTOS;
 }
 
-bool cargarProductosDesdePantalla(Producto & productoACargar){
+bool cargarProductoDesdePantalla(Producto & productoACargar){
     cout << "ID Producto: ";
     cin >> productoACargar.idProducto;
     if( finCargaDeProductos(productoACargar.idProducto) ) {
@@ -41,6 +26,19 @@ bool cargarProductosDesdePantalla(Producto & productoACargar){
     return true;
 }
 
+void cargarProductosDesdePantalla(NodoProducto* & productos){
+    bool seguirCargando;
+    Producto productoACargar;
+
+    cout << "*** Para terminar la carga: idProducto = -1" << endl;
+    cout << "Ingrese datos de los productos: " << endl;
+    seguirCargando = cargarProductoDesdePantalla( productoACargar );
+    while( seguirCargando ) {
+        agregarOrdenado(productos, productoACargar);
+        seguirCargando = cargarProductoDesdePantalla( productoACargar );
+    }
+}
+
 void imprimirProducto(Producto producto){
     cout << endl;
     cout << "ID Producto: " << producto.idProducto << endl;
@@ -49,7 +47,7 @@ void imprimirProducto(Producto producto){
     cout << "Peso: " << producto.peso << endl;
 }
 
-void mostrarProductos(NodoProducto *productos){
+void imprimirProductos(NodoProducto *productos){
     NodoProducto* cursor = productos;
     while( cursor != NULL ){
         imprimirProducto(cursor->info);

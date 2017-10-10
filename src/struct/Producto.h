@@ -9,7 +9,7 @@
 
 struct Producto {
     int idProducto;
-    std::string descripcion;
+    char descripcion[50];
     int stock;
     float peso;
 };

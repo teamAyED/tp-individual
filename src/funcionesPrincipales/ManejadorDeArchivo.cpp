@@ -6,26 +6,30 @@
 
 using namespace std;
 
-Producto leerArchivoProductos(string nombreArchivo){
-    FILE* archivo = fopen(nombreArchivo, "r");
-    if(archivo != NULL){
-        Producto producto;
-        fread(producto, sizeof(Producto), 1, archivo);
-        return producto;
-    }
-    return NULL;
-}
-
-NodoProducto* cargarProductosDesdeArchivo(string nombreArchivo){
-
-}
 
 bool guardarProductosEnArchivo(string nombreArchivo, NodoProducto* productos){
-    FILE* archivo = fopen(nombreArchivo, "w+");
+    FILE* archivo = fopen(nombreArchivo.c_str(), "wb");
     if(archivo != NULL){
-        Producto producto;
-        fread(producto, sizeof(Producto), 1, archivo);
-        return producto;
+        NodoProducto* productoAGuardar = productos;
+        while( productoAGuardar != NULL ){
+            fwrite(& productoAGuardar->info, sizeof(Producto), 1, archivo);
+            productoAGuardar = productoAGuardar->siguiente;
+            //delete(productoAGuardar);
+        }
+        fclose(archivo);
+        return true;
     }
     return false;
+}
+
+void imprimirProductosDeArchivo(string nombreArchivo, NodoProducto* & productos){
+    FILE* archivo = fopen(nombreArchivo.c_str(), "rb");
+    if(archivo != NULL){
+        Producto productoEnArchivo;
+        fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
+        while( ! feof(archivo) ){
+            imprimirProducto(productoEnArchivo);
+            fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
+        }
+    }
 }
