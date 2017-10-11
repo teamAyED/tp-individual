@@ -17,7 +17,8 @@ bool cargarProductoDesdePantalla(Producto & productoACargar){
         return false;
     }
     cout << "Descripcion: ";
-    cin >> productoACargar.descripcion;
+    cin.ignore();
+    getline(cin, productoACargar.descripcion);
     cout << "Cantidad de unidades: ";
     cin >> productoACargar.stock;
     cout << "Peso: ";
@@ -34,23 +35,8 @@ void cargarProductosDesdePantalla(NodoProducto* & productos){
     cout << "Ingrese datos de los productos: " << endl;
     seguirCargando = cargarProductoDesdePantalla( productoACargar );
     while( seguirCargando ) {
-        agregarOrdenadoEnLista(productos, productoACargar);
+        agregarOrdenadoEnLista(productos, productoACargar, CAMPO_ORDENAMIENTO_STOCK);
         seguirCargando = cargarProductoDesdePantalla( productoACargar );
     }
 }
 
-void imprimirProductoPorPantalla(Producto producto){
-    cout << endl;
-    cout << "ID Producto: " << producto.idProducto << endl;
-    cout << "Descripcion: " << producto.descripcion << endl;
-    cout << "Cantidad de unidades: " << producto.stock << endl;
-    cout << "Peso: " << producto.peso << endl;
-}
-
-void imprimirProductosPorPantalla(NodoProducto *productos){
-    NodoProducto* cursor = productos;
-    while( cursor != NULL ){
-        imprimirProductoPorPantalla(cursor->info);
-        cursor = cursor->siguiente;
-    }
-}
