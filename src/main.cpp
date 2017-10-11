@@ -33,7 +33,6 @@ void mainApp(){
         cout << endl << "Ocurrio un error al guardar los productos en archivo STOCK.dat" << endl;
     }
 
-
     //Ejercicio 3
     leerProductosDeArchivo("STOCK.dat", productosOrdenadosPorPeso);
     cout << endl << "Los 10 productos más pesados que se encuentren en el depósito son:";
