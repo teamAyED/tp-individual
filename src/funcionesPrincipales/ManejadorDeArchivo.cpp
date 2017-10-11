@@ -28,7 +28,7 @@ void imprimirProductosDeArchivo(string nombreArchivo, NodoProducto* & productos)
         Producto productoEnArchivo;
         fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
         while( ! feof(archivo) ){
-            imprimirProducto(productoEnArchivo);
+            imprimirProductoPorPantalla(productoEnArchivo);
             fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
         }
     }

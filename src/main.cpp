@@ -21,18 +21,19 @@ int main(int argc, char **argv) {
 void mainApp(){
     NodoProducto* productos = NULL;
 
+
     cargarProductosDesdePantalla(productos);
 
     cout << endl << "Los 10 productos más pesados que se encuentren en el depósito son:";
     NodoProducto* productoAImprimir = productos;
     for( int i=0; i < 10 || productoAImprimir != NULL ; i++ ){
-        imprimirProducto(productoAImprimir->info);
+        imprimirProductoPorPantalla(productoAImprimir->info);
         productoAImprimir = productoAImprimir->siguiente;
     }
 
     guardarProductosEnArchivo("STOCK.dat", productos);
     cout << endl << "Los productos cargados fueron guardados en STOCK.dat" << endl;
-    vaciar(productos);
+    vaciarLista(productos);
 }
 
 

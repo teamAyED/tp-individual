@@ -16,9 +16,9 @@ bool cargarProductoDesdePantalla(Producto & productoACargar);
 
 void cargarProductosDesdePantalla(NodoProducto* & productos);
 
-void imprimirProducto(Producto producto);
+void imprimirProductoPorPantalla(Producto producto);
 
-void imprimirProductos(NodoProducto *productos);
+void imprimirProductosPorPantalla(NodoProducto *productos);
 
 
 #endif //SIMPLE_EXAMPLE_CARGADEDATOS_H

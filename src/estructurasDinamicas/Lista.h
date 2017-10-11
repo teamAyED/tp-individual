@@ -12,11 +12,11 @@
 #define LISTA_ULTIMO 1
 
 
-void vaciar(NodoProducto* & lista);
+void vaciarLista(NodoProducto *&lista);
 
-void agregarOrdenado(NodoProducto* & lista, Producto producto);
+void agregarOrdenadoEnLista(NodoProducto *&lista, Producto producto);
 
-void agregarAlPrincipio(NodoProducto* & lista, Producto producto);
+void agregarAlPrincipioEnLista(NodoProducto *&lista, Producto producto);
 
 
 

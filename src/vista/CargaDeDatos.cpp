@@ -34,12 +34,12 @@ void cargarProductosDesdePantalla(NodoProducto* & productos){
     cout << "Ingrese datos de los productos: " << endl;
     seguirCargando = cargarProductoDesdePantalla( productoACargar );
     while( seguirCargando ) {
-        agregarOrdenado(productos, productoACargar);
+        agregarOrdenadoEnLista(productos, productoACargar);
         seguirCargando = cargarProductoDesdePantalla( productoACargar );
     }
 }
 
-void imprimirProducto(Producto producto){
+void imprimirProductoPorPantalla(Producto producto){
     cout << endl;
     cout << "ID Producto: " << producto.idProducto << endl;
     cout << "Descripcion: " << producto.descripcion << endl;
@@ -47,10 +47,10 @@ void imprimirProducto(Producto producto){
     cout << "Peso: " << producto.peso << endl;
 }
 
-void imprimirProductos(NodoProducto *productos){
+void imprimirProductosPorPantalla(NodoProducto *productos){
     NodoProducto* cursor = productos;
     while( cursor != NULL ){
-        imprimirProducto(cursor->info);
+        imprimirProductoPorPantalla(cursor->info);
         cursor = cursor->siguiente;
     }
 }
