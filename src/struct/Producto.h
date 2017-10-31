@@ -11,7 +11,7 @@ struct Producto {
     int idProducto;
     std::string descripcion;
     int stock;
-    float peso;
+    int peso;
 };
 
 #endif //TP_INDIVIDUAL_PRODUCTO_H

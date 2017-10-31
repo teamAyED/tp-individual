@@ -21,7 +21,7 @@ bool cargarProductoDesdePantalla(Producto & productoACargar){
     getline(cin, productoACargar.descripcion);
     cout << "Cantidad de unidades: ";
     cin >> productoACargar.stock;
-    cout << "Peso: ";
+    cout << "Peso (Kg): ";
     cin >> productoACargar.peso;
     cout << endl;
     return true;

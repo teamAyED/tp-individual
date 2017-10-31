@@ -39,6 +39,6 @@ bool guardarProductosEnArchivo(std::string nombreArchivo, NodoProducto* producto
  * @param productos
  * @return
  */
-bool leerProductosDeArchivo(std::string nombreArchivo, NodoProducto* productos);
+bool leerProductosDeArchivo(std::string nombreArchivo, NodoProducto* & productos);
 
 #endif //SIMPLE_EXAMPLE_MANEJADORDEARCHIVO_H

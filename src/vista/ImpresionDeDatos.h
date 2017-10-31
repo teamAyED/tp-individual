@@ -23,6 +23,6 @@ void imprimirProductoPorPantalla(Producto producto);
  *
  * @param producto
  */
-void imprimirProductosPorPantalla(NodoProducto *productos);
+void imprimirProductosPorPantalla(NodoProducto* & productos);
 
 #endif //SIMPLE_EXAMPLE_IMPRESIONDEDATOS_H

@@ -33,13 +33,13 @@ void imprimirProductosDeArchivo(string nombreArchivo, NodoProducto* & productos)
     }
 }
 
-bool leerProductosDeArchivo(std::string nombreArchivo, NodoProducto* productos){
+bool leerProductosDeArchivo(std::string nombreArchivo, NodoProducto* & productos){
     FILE* archivo = fopen(nombreArchivo.c_str(), "rb");
     if(archivo != NULL){
         Producto productoEnArchivo;
         fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
         while( ! feof(archivo) ){
-            agregarOrdenadoEnLista(productos, productoEnArchivo, CAMPO_ORDENAMIENTO_PESO);
+            agregarOrdenadoInvertidoEnLista(productos, productoEnArchivo, CAMPO_ORDENAMIENTO_PESO);
             fread(& productoEnArchivo, sizeof(Producto), 1, archivo);
         }
         fclose(archivo);

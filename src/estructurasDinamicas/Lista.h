@@ -19,8 +19,8 @@
 void vaciarLista(NodoProducto *&lista);
 
 /**
- * Agrega el Producto a la lista pasada por parámetro, en el orden indicado en
- * "campoOrdenamiento". Todos los parámetros son obligatorios.
+ * Agrega el Producto a la lista pasada por parámetro, de menor a mayor por el campo
+ * indicado en "campoOrdenamiento". Todos los parámetros son obligatorios.
  *
  * campoOrdenamiento puede ser: CAMPO_ORDENAMIENTO_STOCK o CAMPO_ORDENAMIENTO_PESO.
  *
@@ -50,5 +50,16 @@ Producto eliminarPrimerProductoEnLista(NodoProducto *&lista);
  */
 void agregarAlPrincipioEnLista(NodoProducto *&lista, Producto producto);
 
+/**
+ * Agrega el Producto a la lista pasada por parámetro, de mayor a menor por el campo
+ * indicado en "campoOrdenamiento". Todos los parámetros son obligatorios.
+ *
+ * campoOrdenamiento puede ser: CAMPO_ORDENAMIENTO_STOCK o CAMPO_ORDENAMIENTO_PESO.
+ *
+ * @param lista
+ * @param producto
+ * @param campoOrdenamiento
+ */
+void agregarOrdenadoInvertidoEnLista(NodoProducto *&lista, Producto producto, int campoOrdenamiento);
 
 #endif //SIMPLE_EXAMPLE_LISTA_H
